@@ -12,7 +12,7 @@ This botnet will:
 4. then attack the new system with a dictionary attack.<br>
 5. On Success, exfiltrate data from "/etc/passwd".<br>
 6. Connect to C&C and send information.<br>
-7 Exit.<br>
+7. Exit<br>
 <br>
 <br>
 <h3>IF False:</h3><br>
