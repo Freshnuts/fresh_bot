@@ -31,5 +31,5 @@ while True:
     if srv_cmd == "9j3b3k8":
         ftp_port_check()
         srv_cmd = ""
-        s.send("\n[+] Port 21 open!")
+        s.send("[+] Port 21 open!")
         break

