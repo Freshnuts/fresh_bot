@@ -57,10 +57,10 @@ def cmd():
         print "====== OPEN CONNECTION ======="
         print "%d: Target Connection: %s" % (i, addr)
         print conn.recv(1024)
-        print "[+] Scan Complete"
         print "[*] Closing Connection: %s", addr
         print conn.recv(1024)
-        print "====== CLOSED CONNECTION ======\n\n"
+        print conn.recv(1024)
+        print "====== CLOSED CONNECTION ======"
         time.sleep(1)
     except:
         print "Can't send command."

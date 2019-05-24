@@ -3,25 +3,33 @@ import sys
 import socket
 import time
 
-host = "127.0.0.1"
+host = "127.0.0.1"	# Connect home
 port = 443
+
+target   = "127.0.0.1"
+ftp_port = 21
 
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 s.connect((host, port))
 
+def ftp_port_check():
+    try:
+        connect = s2.connect((target,ftp_port))
+    except:
+        print "port 21 closed"
+        sys.exit()
+    print "port 21 open"
 
-def scan_network():
-    s.send("[+] Scanning")
-    os.system("nmap -sn 192.168.0.1/24 -oN /tmp/passwords")
-    print "Exiting"
 
 
 while True:
     time.sleep(1)
     srv_cmd = s.recv(1024)
     if srv_cmd == "9j3b3k8":
-        scan_network()
+        ftp_port_check()
         srv_cmd = ""
+        s.send("\n[+] Port 21 open!")
         break
