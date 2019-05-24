@@ -61,6 +61,8 @@ def cmd():
         print "[*] Closing Connection: %s", addr
         print conn.recv(1024)
         print conn.recv(1024)
+        print "Activating ftp"
+
         print "====== CLOSED CONNECTION ======"
         time.sleep(1)
     except:
