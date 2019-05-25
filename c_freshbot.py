@@ -24,8 +24,6 @@ def ftp_port_check():
         sys.exit()
     print "port 21 open"
 
-
-
 while True:
     time.sleep(1)
     srv_cmd = s.recv(1024)
