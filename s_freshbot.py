@@ -1,5 +1,5 @@
 import sys
-import ftplib
+from ftplib import *
 import os
 from multiprocessing import Process
 import multiprocessing
@@ -20,7 +20,6 @@ import socket
 # c = counter, the variable is used to check whether p01/p02 have been
 # called before attempting to initialize p01/p02. If The check isn't
 # performed, program crashes.
-
 
 host = ''
 port = 443
@@ -61,10 +60,17 @@ def cmd():
         print "[*] Closing Connection: %s", addr
         print conn.recv(1024)
         print conn.recv(1024)
-        print conn.recv(1024)
-        print "Activating ftp"
+        s_open = "s_open"
+        s_closed = "s_closed"
+        if conn.recv(1024) == s_open:
+            print s_open
+            print "Activating ftp"
+            ftp = FTP('127.0.0.1')
+            ftp.login('anonymous, anonymous')
+        elif conn.recv(1024) == s_closed:
+            print s_closed
+            
 
-        print "====== CLOSED CONNECTION ======"
         time.sleep(1)
     except:
         print "Can't send command."

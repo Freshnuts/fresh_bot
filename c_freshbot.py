@@ -21,6 +21,7 @@ def ftp_port_check():
         connect = s2.connect((target,ftp_port))
     except:
         print "port 21 closed"
+        s.send("s_closed")
         sys.exit()
     print "port 21 open"
 
@@ -30,5 +31,8 @@ while True:
     if srv_cmd == "9j3b3k8":
         ftp_port_check()
         srv_cmd = ""
-        s.send("[+] Port 21 open!")
+        s.send("[+] Port 21 open!\n")
+        s.send("s_open")
+
+
         break
