@@ -1,6 +1,7 @@
 # freshBot
-This is a loose Demonstration of a botnet in Python.<br>
-The objective of this exercise is to demonstrate the functions of a botnet.<br>
+Demonstration of a botnet in Python.<br>
+The objective of this exercise is to get an idea how a botnet works, and<br>
+to familiarize myself with Socket, Multiprocessing, and (ssh)paramiko libraries.<br>
 <br>
 Players in the game<br>
 ===================<br>

@@ -1,5 +1,4 @@
 import sys
-from ftplib import *
 import os
 from multiprocessing import Process
 import multiprocessing
@@ -37,7 +36,7 @@ except:
     exit()
 
 print "[+] Listening"
-s.listen(2)
+s.listen(4)
 
 def acpt():
     global i
@@ -50,6 +49,15 @@ def acpt():
         p.start()
         p.join()
         i += 1
+
+def ftp_port_check():
+    try:
+        connect = s2.connect((target,ftp_port))
+    except:
+        print "port 21 closed"
+        s.send("s_closed")
+        sys.exit()
+    print "port 21 open"
 
 def cmd():
     try:
@@ -65,8 +73,9 @@ def cmd():
         if conn.recv(1024) == s_open:
             print s_open
             print "Activating ftp"
-            ftp = FTP('127.0.0.1')
-            ftp.login('anonymous, anonymous')
+            ftp = FTP('127.0.0.1') # Connect to client IP ftp
+            ftp.login('anonymous, anonymous') # "Dictionary attack"
+            ftp.retrlines('LIST') # if successful perform listing/passive
         elif conn.recv(1024) == s_closed:
             print s_closed
             
