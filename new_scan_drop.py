@@ -5,16 +5,14 @@ import warnings
 
 # scan_drop.py functions
 # 1. Scans target network for nodes running ssh services on port 22.
-# 2. If successful, then RCE. Run 'wget' to get file from our evil web server. 
-# 3. Run "evil_file".
-# 4. Finally, delete "evil_file"i & disconnect.
+# 2. If target found, dictionary attack.
+# 3. If successful, "wget" a file from evil web server.
+# 4. Run "evil_file".
+# 5. Finally, delete "evil_file" & disconnect.
 
 # evil_file functions
 # 1. "evil_file" is a meterpreter reverse tcp shell to C&C.
 # 2. C&C takes over.
-# 3. 
-
-#"malicious" file from our evil web server to the target.
 
 # remove depracated warnings
 warnings.filterwarnings(action='ignore',module='.*paramiko.*')
