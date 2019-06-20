@@ -13,8 +13,15 @@ scan_drop.py<br>
 <br>
 <br>
 Functions:<br>
-1. scan_drop.py will scan network for ssh servers with weak passwords<br>
-&nbsp;&nbsp;&nbsp;and perform a dictionary attack.<br>
-2. scan_drop.py performs RCE.<br>
-3. RCE downloads evil_file from evil_web_server<br>
-4. evil_file connects back to c&c.
+# scan_drop.py functions<br>
+# 1. scans target network for nodes running ssh services on port 22.<br>
+# 2. if target found, dictionary attack.<br>
+# 3. if successful, RCE.<br>
+# 4. user@target# "wget" a file (evil_file) from our web server.<br>
+# 4. user@target# run payload.<br>
+# 5. user@target# delete payload & disconnect.<br>
+<br>
+<br>
+# evil_file functions<br>
+# 1. "evil_file" is a binary meterpreter tcp reverse shell to C&C.<br>
+# 2. C&C takes over while scan_drop.py disconnects.<br>
