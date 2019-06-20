@@ -25,6 +25,7 @@ def ssh_start():
         stdin, stdout, stderr = p.exec_command('uname -a; id')
         f = open("bots", "a")
         f.write("=" * 70 + "\n")
+        f.write("ip: %s\n" % ip)
         for line in stdout:
             print(line.strip('\n'))
             f.write(line)
