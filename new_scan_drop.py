@@ -15,7 +15,7 @@ num2 = 0
 
 def ssh_start():
     ip = "192.168.203.%d" % i
-	# print "Connecting:", ip, user_list[num] + pass_list[num2]
+    # print "Connecting:", ip, user_list[num] + pass_list[num2]
     p = paramiko.SSHClient()
     p.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
@@ -35,7 +35,6 @@ def ssh_start():
         f.close()
     except paramiko.AuthenticationException:
             pass
-
 
 for i in range(150,155):
     for num in range(0,4):
