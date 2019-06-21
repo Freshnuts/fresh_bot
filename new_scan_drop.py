@@ -15,7 +15,7 @@ num2 = 0
 
 def ssh_start():
     ip = "192.168.203.%d" % i
-    # print "Connecting:", ip, user_list[num] + pass_list[num2]
+    print "Connecting:", ip, user_list[num] + pass_list[num2]
     p = paramiko.SSHClient()
     p.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
@@ -43,7 +43,6 @@ for i in range(150,155):
             p = multiprocessing.Process(target=ssh_start)
             jobs.append(p)
             p.start()
-            #p.join()
+            # p.join()
             num2 += 1
     num += 1
-    time.sleep(1)
