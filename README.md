@@ -17,8 +17,8 @@ Functions:<br>
 # 1. scans virtual network for nodes running ssh services on port 22.<br>
 # 2. If service found on node perform dictionary attack.<br>
 # 3. If dictionary attack successful, RCE:<br>
-# &#9;user@target# "wget" a file (evil_file) from our web server.<br>
-# &#9;user@target# run payload.<br>
+#&#160;&#160;user@target# "wget" a file (evil_file) from our web server.<br>
+#&#160;&#160;user@target# run payload.<br>
 # &#9;user@target# delete payload & disconnect.<br>
 <br>
 <br>
