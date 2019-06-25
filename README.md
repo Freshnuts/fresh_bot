@@ -8,7 +8,7 @@ from our web server.
 <br>
 <h1>The Environment Setup</h1><br>
 <br>
-1. Our Attack machine: ** Linux kali 4.16.0-kali2-amd64 **<br>
+1. Our Attack machine: **Linux kali 4.16.0-kali2-amd64 **<br>
 2. Our Web Server: **192.168.203.1/evil_file**<br>
 3. **4** * **ubuntu-16.04.5-desktop-amd64** in the same virtual network.<br>
 4. Python - paramiko module.<br>
