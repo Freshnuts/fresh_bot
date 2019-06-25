@@ -14,10 +14,10 @@ scan_drop.py<br>
 <br>
 Functions:<br>
 # scan_drop.py functions<br>
-# 1. scans target network for nodes running ssh services on port 22.<br>
-# 2. if target found, dictionary attack.<br>
-# 3. if successful, RCE.<br>
-# 4. user@target# "wget" a file (evil_file) from our web server.<br>
+# 1. scans virtual network for nodes running ssh services on port 22.<br>
+# 2. If service found on node perform dictionary attack.<br>
+# 3. If dictionary attack successful, RCE:<br>
+#</t>user@target# "wget" a file (evil_file) from our web server.<br>
 # 4. user@target# run payload.<br>
 # 5. user@target# delete payload & disconnect.<br>
 <br>
