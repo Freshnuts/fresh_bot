@@ -1,10 +1,10 @@
 # freshBot
 Demonstration of a simple botnet written in Python.<br>
 <br>
-"scan_drop.py" scans virtual network, if it finds a node with ssh service<br>
+<p>**scandrop.py** scans virtual network, if it finds a node with ssh service<br>
 running it performs a dictionary attack on it. Once, correct credentials are<br>
 provided, 1st payload executes and directs target to download an "evil_file"<br>
-from our web server.
+from our web server.</p>
 <br>
 <h1>The Environment Setup</h1><br>
 <br>
