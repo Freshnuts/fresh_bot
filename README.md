@@ -6,7 +6,7 @@ running it performs a dictionary attack on it. Once, correct credentials are<br>
 provided, 1st payload executes and directs target to download an "evil_file"<br>
 from our web server.
 <br>
-<h1>The Environment Setup<h1><br>
+<h1>The Environment Setup</h1><br>
 <br>
 1. Our Attack machine: Linux kali 4.16.0-kali2-amd64<br>
 2. Web Server hosting for 2nd Stage payload, "evil_file".<br>
