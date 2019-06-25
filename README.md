@@ -8,9 +8,9 @@ from our web server.
 <br>
 <h1>The Environment Setup<h1><br>
 <br>
-1. Our Attack machine: **Linux kali 4.16.0-kali2-amd64**<br>
+1. Our Attack machine: __Linux kali 4.16.0-kali2-amd64__<br>
 2. Web Server hosting for 2nd Stage payload, "evil_file".<br>
-3. 4 x **ubuntu-16.04.5-desktop-amd64** in the same virtual network.<br>
+3. 4 x __ubuntu-16.04.5-desktop-amd64__ in the same virtual network.<br>
 4. Python - paramiko module.
 5. msfvenom
 6. msf5 > exploit/multi/handler module
