@@ -3,8 +3,8 @@ Demonstration of a simple botnet written in Python.<br>
 <br>
 "scan_drop.py" scans virtual network, if it finds a node with ssh<br>
 running on it performs a dictionary attack. If the credentials are correctly<br>
-provided, RCE directs target to download 2nd payload. 2nd stage payload is<br> 
-a reverse meterpreter shell to C&C.
+provided, RCE directs target to download 2nd payload & execute.<br>
+2nd stage payload is a reverse meterpreter shell to C&C.
 <br>
 <h3>Environment & Setup</h3>
 1. Our Attack machine: <h4>Linux kali 4.16.0-kali2-amd64</h4>
