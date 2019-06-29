@@ -2,7 +2,7 @@
 Demonstration of a simple botnet written in Python.<br>
 <br>
 "scan_drop.py" scans virtual network. If it finds a node with ssh<br>
-running it performs a dictionary attack. If successful, RCE directs<br>
+service. It then performs a dictionary attack. If successful, RCE directs<br>
 target to download a meterpreter reverse shell payload & execute it.<br>
 Multiprocessing allows for multiple targets to connect to our handler<br>
 at once.<br>
