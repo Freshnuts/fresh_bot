@@ -10,7 +10,7 @@ at once.<br>
 <h3>Environment & Setup</h3>
 1. Our Attack machine: <h4>Linux kali 4.16.0-kali2-amd64</h4>
 2. Create Web Server: <h4>192.168.203.1/evil_file</h4>
-3. 4 target ssh servers on the same virtual network: <h4>ubuntu-16.04.5-desktop-amd64</h4>
+3. Create 4 target VMs. All with ssh servers on the same virtual network: <h4>ubuntu-16.04.5-desktop-amd64</h4>
 &nbsp;&nbsp;&nbsp;192.168.203.150&nbsp;&nbsp;user: fresh1 &nbsp;pass: fresh1<br>
 &nbsp;&nbsp;&nbsp;192.168.203.151&nbsp;&nbsp;user: fresh2 &nbsp;pass: fresh2<br>
 &nbsp;&nbsp;&nbsp;192.168.203.152&nbsp;&nbsp;user: fresh3 &nbsp;pass: fresh3<br>
