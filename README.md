@@ -1,4 +1,4 @@
-# simple_bot:
+# fresh_bot:
 Demonstration of a simple botnet written in Python.<br>
 <br>
 "scan_drop.py" file scans virtual network. If it finds a node with ssh<br>
