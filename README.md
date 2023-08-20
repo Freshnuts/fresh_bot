@@ -19,6 +19,6 @@ at once.<br>
 <br>
 5. Run metasploit hander: msf5 > use exploit/multi/handler module<br>
 <br>
-6. Atteck/Exploit<br>
+6. Attack/Exploit using dictionary attack.<br>
 <br>
-7. Run scan_drop.py on target
+7. Run scan_drop.py on target.
