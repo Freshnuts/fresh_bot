@@ -18,5 +18,5 @@ at once.<br>
 &nbsp;&nbsp;&nbsp;192.168.203.153&nbsp;&nbsp;user: fresh4 &nbsp;pass: fresh4<br>
 <br>
 5. Run metasploit hander: msf5 > <h4>exploit/multi/handler module</h4>
-6. Atteck/Exploit: <h4></h4>Scan, Dictionary Attack, RCE. </h4>
+6. Atteck/Exploit: <h4></h4>Scan, Dictionary Attack, RCE.</h4><br>
 7. Run scan_drop.py on target
